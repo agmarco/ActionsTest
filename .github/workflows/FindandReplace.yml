@@ -1,14 +1,8 @@
-name: find and replace
-on: [push, pull_request]
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: cschleiden/replace-tokens@v1
-        with:
-              files: '["**/*.cs"]'
-        env:
-          connectionString: Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;
-          epicorUrl: tcp:/someurl
-          someVariable: SubbedByGithubActions
-          anotherVariable: ChangedByGithubActions
+- uses: cschleiden/replace-tokens@v1
+  with:
+        files: '["**/*.cs"]'
+  env:
+    connectionString: Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;
+    epicorUrl: tcp:/someurl
+    someVariable: SubbedByGithubActions
+    anotherVariable: ChangedByGithubActions
