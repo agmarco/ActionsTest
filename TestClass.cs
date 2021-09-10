@@ -2,16 +2,16 @@ using System;
 
 public class TestClass
 {    
-    private string ConnectionString = "";
-    private string EpicorUrl = "";
+    private string ConnectionString = "#{connectionString}#";
+    private string EpicorUrl = "#{epicorUrl}#";
 
     public string TestMethod(string value)
     {
-        var inmethodValue = "";
+        var inmethodValue = "#{someVariable}#";
     }
 
     public string DummyMethod(string anotherMethod)
     {
-        var anotherMethodVariable = "";
+        var anotherMethodVariable = "#{anotherVariable}#";
     }
 }

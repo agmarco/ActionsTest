@@ -1,16 +1,14 @@
-on: [push]
-name: variable substitution in C#
-
+name: find and replace
+on: [push, pull_request]
 jobs:
   build:
-      runs-on: ubuntu-latest
-      steps:
-      - uses: actions/checkout@v2
-      - uses: microsoft/variable-substitution@v1 
+    runs-on: ubuntu-latest
+    steps:
+      - uses: cschleiden/replace-tokens@v1
         with:
-          files: '*.cs'
-        env:          
-          ConnectionString: Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;
-          EpicorUrl: tcp:/someurl
-          inmethodValue: SubbedByGithubActions
-          anotherMethodVariable: ChangedByGithubActions
+              files: '["**/*.cs"]'
+        env:
+          connectionString: Server=myServerAddress;Database=myDataBase;User Id=myUsername;Password=myPassword;
+          epicorUrl: tcp:/someurl
+          someVariable: SubbedByGithubActions
+          anotherVariable: ChangedByGithubActions
