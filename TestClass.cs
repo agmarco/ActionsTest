@@ -2,7 +2,7 @@ using System;
 
 public class TestClass
 {    
-    private string ConnectionString = "bezl.connectionString";
+    private string ConnectionString = "";
     private string EpicorUrl = "";
 
     public string TestMethod(string value)
